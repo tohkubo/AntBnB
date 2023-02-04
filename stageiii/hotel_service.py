@@ -1,6 +1,6 @@
 from typing import Optional
 
-from helpers import _parse_date, format_date
+from helpers import format_date, parse_date
 from models import Reservation
 
 
@@ -30,8 +30,8 @@ class HotelService:
             return
         res = Reservation(
             room=int(roomnum),
-            start=_parse_date(start),
-            end=_parse_date(end),
+            start=parse_date(start),
+            end=parse_date(end),
             first_name=first,
             last_name=last,
         )
